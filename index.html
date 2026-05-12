@@ -62,7 +62,10 @@
       <a href="#top" class="brand" aria-label="Rock Capital Partners home">
         <img src="images/logo.png" alt="Rock Capital Partners" />
       </a>
-      <nav aria-label="Primary">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#strategy">Strategy</a></li>
@@ -179,16 +182,16 @@
           across Bergen County.
         </p>
         <div class="project-gallery">
-          <figure class="gallery-item"><img src="images/projects/project-01.jpg" alt="Custom single-family home by Rock Capital Partners with paver driveway in Bergen County, NJ" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-02.jpg" alt="Aerial view of side-by-side luxury craftsman residences in Northern New Jersey" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-03.jpg" alt="White craftsman home with steep gables built by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-04.jpg" alt="Modern craftsman residence in Bergen County, New Jersey" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-05.jpg" alt="Light-grey craftsman home with double garage by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-06.jpg" alt="Aerial view of paired residential development in Bergen County" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-07.jpg" alt="Aerial view of completed Rock Capital Partners homes in a wooded Northern NJ neighborhood" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-08.jpg" alt="Rear elevation of new-construction homes by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-09.jpg" alt="White craftsman home with mixed siding by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
-          <figure class="gallery-item"><img src="images/projects/project-10.jpg" alt="White craftsman home with stone accents by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-01.jpg" srcset="images/projects/project-01-800.jpg 800w, images/projects/project-01.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Custom single-family home by Rock Capital Partners with paver driveway in Bergen County, NJ" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-02.jpg" srcset="images/projects/project-02-800.jpg 800w, images/projects/project-02.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Aerial view of side-by-side luxury craftsman residences in Northern New Jersey" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-03.jpg" srcset="images/projects/project-03-800.jpg 800w, images/projects/project-03.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="White craftsman home with steep gables built by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-04.jpg" srcset="images/projects/project-04-800.jpg 800w, images/projects/project-04.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Modern craftsman residence in Bergen County, New Jersey" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-05.jpg" srcset="images/projects/project-05-800.jpg 800w, images/projects/project-05.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Light-grey craftsman home with double garage by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-06.jpg" srcset="images/projects/project-06-800.jpg 800w, images/projects/project-06.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Aerial view of paired residential development in Bergen County" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-07.jpg" srcset="images/projects/project-07-800.jpg 800w, images/projects/project-07.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Aerial view of completed Rock Capital Partners homes in a wooded Northern NJ neighborhood" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-08.jpg" srcset="images/projects/project-08-800.jpg 800w, images/projects/project-08.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="Rear elevation of new-construction homes by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-09.jpg" srcset="images/projects/project-09-800.jpg 800w, images/projects/project-09.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="White craftsman home with mixed siding by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
+          <figure class="gallery-item"><img src="images/projects/project-10.jpg" srcset="images/projects/project-10-800.jpg 800w, images/projects/project-10.jpg 1600w" sizes="(max-width: 720px) 100vw, 50vw" alt="White craftsman home with stone accents by Rock Capital Partners" loading="lazy" decoding="async" /></figure>
         </div>
       </div>
     </section>
@@ -235,6 +238,29 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('primary-nav');
+      if (!btn || !nav) return;
+      function close() {
+        document.body.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open menu');
+      }
+      btn.addEventListener('click', function () {
+        var open = document.body.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
