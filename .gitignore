@@ -1,0 +1,9 @@
+.DS_Store
+.dropbox
+.dropbox.attr
+.dropbox.cache
+Icon?
+Thumbs.db
+.idea/
+.vscode/
+*.swp
