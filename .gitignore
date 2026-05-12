@@ -1,5 +1,7 @@
 .claude/
 .DS_Store
+# Source image folder — web-optimized copies live in images/projects/
+Projects/
 .dropbox
 .dropbox.attr
 .dropbox.cache
