@@ -1,0 +1,5 @@
+Contact: mailto:info@rock-capital-partners.com
+Expires: 2027-05-18T18:23:06Z
+Preferred-Languages: en
+Canonical: https://rock-capital-partners.com/.well-known/security.txt
+Policy: https://rock-capital-partners.com/SECURITY.md
