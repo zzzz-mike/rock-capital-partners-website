@@ -10,22 +10,17 @@
 
   <title>Rock Capital Partners — Luxury Residential Developer in Bergen County, NJ</title>
 
-  <!-- Google Analytics 4 (cookieless, Consent Mode v2 default-denied) -->
+  <!-- Google Analytics 4 (cookieless — client_storage off, real events fire) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS345DRG6C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
-    });
     gtag('config', 'G-ZS345DRG6C', {
       'anonymize_ip': true,
       'allow_google_signals': false,
-      'allow_ad_personalization_signals': false
+      'allow_ad_personalization_signals': false,
+      'client_storage': 'none'
     });
   </script>
   <meta name="description" content="Rock Capital Partners is a luxury residential developer in Northern New Jersey. We acquire land, redevelopment properties, and subdivision sites across Bergen County and deliver turnkey single-family and multi-family homes." />
