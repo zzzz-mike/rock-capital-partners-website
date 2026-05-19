@@ -4,11 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <title>Rock Capital Partners — Luxury Residential Developer in Bergen County, NJ</title>
+
+  <!-- Google Analytics 4 (cookieless, Consent Mode v2 default-denied) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS345DRG6C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('config', 'G-ZS345DRG6C', {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  </script>
   <meta name="description" content="Rock Capital Partners is a luxury residential developer in Northern New Jersey. We acquire land, redevelopment properties, and subdivision sites across Bergen County and deliver turnkey single-family and multi-family homes." />
   <link rel="canonical" href="https://rock-capital-partners.com/" />
 
